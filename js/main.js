@@ -204,7 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (valid) {
-            showToast('留言提交成功，我们会尽快与您联系！');
+            showToast('留言提交中...');
+            contactForm.submit();
             contactForm.reset();
         }
     });
