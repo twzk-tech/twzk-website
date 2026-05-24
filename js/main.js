@@ -205,8 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (valid) {
             showToast('留言提交中...');
-            contactForm.submit();
-            contactForm.reset();
+            setTimeout(() => { contactForm.submit(); }, 300);
         }
     });
 
