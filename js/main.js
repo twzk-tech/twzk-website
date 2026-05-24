@@ -333,4 +333,104 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', initParticles);
         initParticles();
     }
+
+    // ============================================
+    // 轮播
+    // ============================================
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = track.querySelectorAll('img');
+        const dotsContainer = carousel.querySelector('.carousel-dots');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        let current = 0;
+        let interval;
+
+        // 创建指示点
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', '第' + (i + 1) + '张');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        function next() { goTo((current + 1) % slides.length); }
+        function prev() { goTo((current - 1 + slides.length) % slides.length); }
+
+        prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+        nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+
+        function startAuto() { interval = setInterval(next, 4000); }
+        function resetAuto() { clearInterval(interval); startAuto(); }
+
+        if (slides.length > 1) startAuto();
+
+        // 点击放大 → 灯箱
+        slides.forEach((img, i) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => openLightbox(slides, i));
+        });
+    });
+
+    // ============================================
+    // 灯箱
+    // ============================================
+    function openLightbox(slides, index) {
+        const existing = document.querySelector('.lightbox');
+        if (existing) existing.remove();
+
+        let current = index;
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox open';
+        lightbox.innerHTML = `
+            <button class="lightbox-close" aria-label="关闭"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev" aria-label="上一张"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next" aria-label="下一张"><i class="fas fa-chevron-right"></i></button>
+            <img src="${slides[current].src}" alt="">
+            <span class="lightbox-counter">${current + 1} / ${slides.length}</span>
+        `;
+        document.body.appendChild(lightbox);
+
+        const img = lightbox.querySelector('img');
+        const counter = lightbox.querySelector('.lightbox-counter');
+
+        function update() {
+            img.src = slides[current].src;
+            counter.textContent = (current + 1) + ' / ' + slides.length;
+        }
+
+        lightbox.querySelector('.lightbox-next').addEventListener('click', () => {
+            current = (current + 1) % slides.length;
+            update();
+        });
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
+            current = (current - 1 + slides.length) % slides.length;
+            update();
+        });
+        lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) close();
+        });
+        document.addEventListener('keydown', onKey);
+
+        function close() {
+            lightbox.classList.remove('open');
+            document.removeEventListener('keydown', onKey);
+            setTimeout(() => lightbox.remove(), 300);
+        }
+
+        function onKey(e) {
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowRight') { current = (current + 1) % slides.length; update(); }
+            if (e.key === 'ArrowLeft') { current = (current - 1 + slides.length) % slides.length; update(); }
+        }
+    }
 });
