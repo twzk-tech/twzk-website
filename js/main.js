@@ -346,6 +346,16 @@ document.addEventListener('DOMContentLoaded', () => {
         let current = 0;
         let interval;
 
+        // 懒加载：只保留首张 src，其余改成 data-src
+        slides.forEach((img, i) => {
+            if (i !== 0 && img.src) {
+                img.dataset.src = img.src;
+                img.removeAttribute('src');
+                // 给一个透明占位
+                img.style.minWidth = '100%';
+            }
+        });
+
         // 创建指示点
         slides.forEach((_, i) => {
             const dot = document.createElement('button');
@@ -360,6 +370,18 @@ document.addEventListener('DOMContentLoaded', () => {
             current = index;
             track.style.transform = 'translateX(-' + (current * 100) + '%)';
             dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            // 懒加载当前及相邻图片
+            loadSlide(current);
+            loadSlide(current + 1);
+            loadSlide(current - 1);
+        }
+
+        function loadSlide(i) {
+            const img = slides[i];
+            if (img && img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            }
         }
 
         function next() { goTo((current + 1) % slides.length); }
@@ -376,7 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // 点击放大 → 灯箱
         slides.forEach((img, i) => {
             img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => openLightbox(slides, i));
+            img.addEventListener('click', () => {
+                // 确保当前图片已加载
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                openLightbox(slides, i);
+            });
         });
     });
 
@@ -403,7 +432,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const counter = lightbox.querySelector('.lightbox-counter');
 
         function update() {
-            img.src = slides[current].src;
+            const src = slides[current].src || slides[current].dataset.src;
+            // 触发懒加载
+            if (!slides[current].src && slides[current].dataset.src) {
+                slides[current].src = slides[current].dataset.src;
+                slides[current].removeAttribute('data-src');
+            }
+            img.src = src;
             counter.textContent = (current + 1) + ' / ' + slides.length;
         }
 
