@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="上海拓维智科信息科技有限公司 - 专注数字孪生、智慧城市、智慧园区、智慧医院、智慧工厂解决方案">
+    <meta name="keywords" content="数字孪生,智慧城市,智慧园区,智慧医院,智慧工厂,上海拓维智科">
+    <title>上海拓维智科信息科技有限公司 - 数字孪生 & 智慧城市解决方案</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ========== 导航栏 ========== -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/Markdown格式使用方法.png" alt="拓维智科" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">拓维智科</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">首页</a></li>
+                    <li><a href="#about" class="nav-link">关于我们</a></li>
+                    <li><a href="#services" class="nav-link">服务方案</a></li>
+                    <li><a href="#cases" class="nav-link">项目案例</a></li>
+                    <li><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== 首屏 Hero ========== -->
+    <section class="hero" id="home">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle-top">上海拓维智科信息科技有限公司</p>
+            <h1 class="hero-title">数字孪生 · 智慧城市 · 数智未来</h1>
+            <p class="hero-description">以领先的数字孪生技术驱动城市数字化转型升级<br>为智慧城市、智慧园区、智慧医院、智慧工厂提供全方位解决方案</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">了解我们的服务</a>
+                <a href="#contact" class="btn btn-outline">联系我们</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>向下滚动</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ========== 关于我们 ========== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">关于我们</h2>
+                <p class="section-subtitle">上海拓维智科信息科技有限公司</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>致力于数字孪生技术创新的先行者</h3>
+                    <p>上海拓维智科信息科技有限公司是一家专注于数字孪生技术研发与应用的高科技企业。公司总部位于上海，汇聚了一批来自人工智能、大数据、物联网、三维可视化等领域的顶尖人才，致力于为政府和企业客户提供领先的数字化转型解决方案。</p>
+                    <p>我们深耕智慧城市、智慧园区、智慧医院、智慧工厂等领域，通过数字孪生技术将物理世界精准映射到数字空间，实现全域感知、智能分析、科学决策和精准执行，助力客户实现降本增效和智能化管理。</p>
+                    <p>公司秉承"创新驱动、技术赋能"的理念，持续加大研发投入，不断突破技术边界，以卓越的产品和服务赢得客户信赖。</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span><span>+</span>
+                        <span class="stat-label">服务项目</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span><span>+</span>
+                        <span class="stat-label">合作客户</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span><span>+</span>
+                        <span class="stat-label">行业领域</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98">0</span><span>%</span>
+                        <span class="stat-label">客户满意度</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 服务方案 ========== -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">服务方案</h2>
+                <p class="section-subtitle">全方位数字孪生解决方案，赋能行业数字化转型</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>数字孪生平台</h3>
+                    <p>自主研发的数字孪生基础平台，支持多源数据融合、实时渲染和智能分析，为各类应用场景提供强大的底层支撑。具备高精度三维建模、实时数据驱动和AI仿真推演能力。</p>
+                    <ul class="service-features">
+                        <li>高精度三维可视化</li>
+                        <li>多源数据融合引擎</li>
+                        <li>AI仿真与推演</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>智慧城市建设</h3>
+                    <p>构建城市级数字孪生底座，实现城市运行态势全感知、全监测、全预警。覆盖城市治理、交通管理、应急指挥、环境保护等多个维度。</p>
+                    <ul class="service-features">
+                        <li>城市运行IOC大屏</li>
+                        <li>智慧交通管理</li>
+                        <li>应急指挥调度</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>智慧园区管理</h3>
+                    <p>面向产业园区、开发区等场景，提供招商管理、物业管理、能耗监控、安防管理等功能，打造数字化、智能化的园区运营体系。</p>
+                    <ul class="service-features">
+                        <li>园区全景可视化</li>
+                        <li>智慧能效管理</li>
+                        <li>智能安防联动</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>智慧医院解决方案</h3>
+                    <p>基于数字孪生技术构建智慧医院管理平台，实现医院建筑设备管理、患者流向分析、医疗资源调度等功能，提升医院运营效率和服务质量。</p>
+                    <ul class="service-features">
+                        <li>医院数字孪生可视化</li>
+                        <li>医疗资源智能调度</li>
+                        <li>后勤运维管理</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>智慧工厂系统</h3>
+                    <p>为制造企业打造工厂级数字孪生系统，实现产线仿真、设备预测性维护、质量追溯和供应链优化，推动制造业智能化转型升级。</p>
+                    <ul class="service-features">
+                        <li>产线数字孪生仿真</li>
+                        <li>设备预测性维护</li>
+                        <li>生产质量追溯</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 项目案例 ========== -->
+    <section class="cases section" id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">项目案例</h2>
+                <p class="section-subtitle">以专业能力交付价值，以成功案例见证实力</p>
+            </div>
+            <div class="case-filters">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="city">智慧城市</button>
+                <button class="filter-btn" data-filter="park">智慧园区</button>
+                <button class="filter-btn" data-filter="hospital">智慧医院</button>
+                <button class="filter-btn" data-filter="factory">智慧工厂</button>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card" data-category="city">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-city"></i>
+                            <span>智慧城市项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某市城市运行管理中心</h4>
+                        <p>构建城市级数字孪生IOC平台，整合交通、安防、城管等12个业务系统</p>
+                        <span class="case-tag">智慧城市</span>
+                    </div>
+                </div>
+                <div class="case-card" data-category="city">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-road"></i>
+                            <span>智慧交通项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某市智慧交通数字孪生系统</h4>
+                        <p>实现全市交通路况实时孪生映射与信号灯智能优化调度</p>
+                        <span class="case-tag">智慧城市</span>
+                    </div>
+                </div>
+                <div class="case-card" data-category="park">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-building"></i>
+                            <span>智慧园区项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某高新区智慧园区管理平台</h4>
+                        <p>覆盖园区全生命周期管理，实现能耗下降30%、运维效率提升50%</p>
+                        <span class="case-tag">智慧园区</span>
+                    </div>
+                </div>
+                <div class="case-card" data-category="park">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-warehouse"></i>
+                            <span>产业园项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某科技产业园区数字孪生平台</h4>
+                        <p>集成招商、物业、安防、能源等模块，支撑园区数字化运营管理</p>
+                        <span class="case-tag">智慧园区</span>
+                    </div>
+                </div>
+                <div class="case-card" data-category="hospital">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-hospital"></i>
+                            <span>智慧医院项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某三甲医院智慧后勤管理平台</h4>
+                        <p>实现医院建筑、设备、能源的数字孪生管理与智能运维调度</p>
+                        <span class="case-tag">智慧医院</span>
+                    </div>
+                </div>
+                <div class="case-card" data-category="factory">
+                    <div class="case-image">
+                        <div class="case-placeholder">
+                            <i class="fas fa-industry"></i>
+                            <span>智慧工厂项目</span>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>某制造企业数字孪生工厂</h4>
+                        <p>产线1:1三维建模，实现生产过程实时监控、仿真优化和预测性维护</p>
+                        <span class="case-tag">智慧工厂</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 联系我们 ========== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">联系我们</h2>
+                <p class="section-subtitle">期待与您的合作，欢迎随时联系我们</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>公司地址</h4>
+                            <p>上海市宝山区沪太路2388号201室A区</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>联系电话</h4>
+                            <p>15611366390</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>电子邮箱</h4>
+                            <p>1549136044@qq.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>工作时间</h4>
+                            <p>周一至周五 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h3>在线留言</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">姓名 <span>*</span></label>
+                                <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">公司</label>
+                                <input type="text" id="company" name="company" placeholder="请输入您的公司名称">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">电话 <span>*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="请输入您的联系电话" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱</label>
+                                <input type="email" id="email" name="email" placeholder="请输入您的电子邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容 <span>*</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="请描述您的需求..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>拓维智科</h3>
+                    <p>上海拓维智科信息科技有限公司<br>专注数字孪生技术创新与应用</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">服务方案</a></li>
+                        <li><a href="#cases">项目案例</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>服务领域</h4>
+                    <ul>
+                        <li><a href="#services">数字孪生平台</a></li>
+                        <li><a href="#services">智慧城市建设</a></li>
+                        <li><a href="#services">智慧园区管理</a></li>
+                        <li><a href="#services">智慧医院解决方案</a></li>
+                        <li><a href="#services">智慧工厂系统</a></li>
+                    </ul>
+                </div>
+                <div class="footer-qr">
+                    <h4>关注我们</h4>
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <span>微信公众号</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 上海拓维智科信息科技有限公司. All Rights Reserved.</p>
+                <p>沪ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== 返回顶部 ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
