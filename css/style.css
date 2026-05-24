@@ -634,6 +634,12 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-links li, .footer-services li { margin-bottom: 8px; }
 .footer-links a, .footer-services a { font-size: 0.85rem; color: var(--color-text-muted); transition: var(--transition); }
 .footer-links a:hover, .footer-services a:hover { color: var(--color-primary); }
+.qr-img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+}
 .qr-placeholder {
     width: 100px;
     height: 100px;
