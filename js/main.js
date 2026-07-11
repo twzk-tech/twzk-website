@@ -432,13 +432,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const counter = lightbox.querySelector('.lightbox-counter');
 
         function update() {
-            const src = slides[current].src || slides[current].dataset.src;
+            // 优先使用原图（data-full），否则用当前src
+            const slide = slides[current];
+            const fullSrc = slide.dataset.full || slide.src;
             // 触发懒加载
-            if (!slides[current].src && slides[current].dataset.src) {
-                slides[current].src = slides[current].dataset.src;
-                slides[current].removeAttribute('data-src');
+            if (!slide.src && slide.dataset.src) {
+                slide.src = slide.dataset.src;
+                slide.removeAttribute('data-src');
             }
-            img.src = src;
+            img.src = fullSrc;
             counter.textContent = (current + 1) + ' / ' + slides.length;
         }
 
